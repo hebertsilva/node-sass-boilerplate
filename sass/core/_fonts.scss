@@ -1,0 +1,9 @@
+@import "base";
+
+/*
+    # Fonts
+
+    `core/_fonts.scss`
+*/
+
+@include make-font($font-1, "font_name", 400);

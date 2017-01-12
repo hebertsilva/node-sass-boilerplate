@@ -1,0 +1,88 @@
+/*
+    # Mixins
+
+    `core/_mixins.scss`
+*/
+
+
+/*
+    ## Fonts
+*/
+
+@mixin font($font-name, $font-weight) {
+    @extend %#{$font-name}-#{$font-weight};
+}
+
+@mixin make-font($font-name, $font-family-name, $font-weight, $add-weight: true) {
+    %#{$font-name}-#{$font-weight}{
+        font-family: $font-family-name;
+        @if $add-weight == true {
+            font-weight: $font-weight;
+        }
+    }
+}
+
+/*
+    ## Forms
+*/
+
+@mixin form-input-placeholder() {
+    input[type="text"].placeholder,
+    input[type="password"].placeholder,
+    input[type="email"].placeholder,
+    input[type="number"].placeholder,
+    textarea.placeholder,
+    .placeholder{
+        @content;
+    }
+
+    ::-webkit-input-placeholder {
+        @content;
+    }
+
+    ::-moz-placeholder  {
+        @content;
+    }
+
+    :-ms-input-placeholder  {
+        @content;
+    }
+
+    input:-moz-placeholder  {
+        @content;
+    }
+
+    textarea:-moz-placeholder  {
+        @content;
+    }
+}
+
+/*
+    ## Breakpoints
+*/
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "container" {
+        @media (max-width: $container) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == "small" {
+        @media (max-width: $container-small) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "medium" {
+        @media (max-width: $container-medium) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == "large" {
+        @media (max-width: $container-large) {
+            @content;
+        }
+    }
+}
