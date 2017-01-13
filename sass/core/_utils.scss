@@ -1,0 +1,32 @@
+/*
+    # Utils
+
+    `core/_utils.scss`
+*/
+
+
+/*
+    ## Layout
+*/
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/*
+    ## Fonts
+*/
+
+.bold {
+    font-weight: bold;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+.text-small {
+    font-size: $font-size-small;
+}

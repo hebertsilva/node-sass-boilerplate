@@ -1,6 +1,7 @@
-@import "../core/base";
+@import "core/base";
 
 body {
+    @include font($font-1, 400);
     font-size: $font-size-default;
     color: $color-black;
 }

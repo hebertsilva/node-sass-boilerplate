@@ -13,7 +13,7 @@
   },
   "scripts": {
     "autoprefixer": "postcss -u autoprefixer -r static/css/*.css static/css/*/*.css",
-    "sass": "node-sass --output-style compressed -o static/css sass",
+    "sass": "node-sass --include-path sass/ --output-style compressed -o static/css sass",
     "serve": "browser-sync start --server --files \"static/css/*.css, **/*.html, !node_modules/**/*.html\"",
 
     "watch:css": "onchange \"sass/\" -- npm run sass",
