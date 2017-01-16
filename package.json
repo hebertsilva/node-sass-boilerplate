@@ -18,7 +18,7 @@
 
     "watch:css": "onchange \"sass/\" -- npm run sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
-    "watch:all": "npm-run-all -p watch:css watch:js",
+    "watch:all": "npm-run-all -p serve watch:css watch:js",
 
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
