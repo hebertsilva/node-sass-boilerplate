@@ -14,13 +14,11 @@
   "scripts": {
     "autoprefixer": "postcss -u autoprefixer -r static/css/*.css static/css/*/*.css",
     "sass": "node-sass --include-path sass/ --output-style compressed -o static/css sass",
-    "serve": "browser-sync start --server --files \"static/css/*.css, **/*.html, !node_modules/**/*.html\"",
-    
+    "serve": "browser-sync --port 8000 start --server --files \"static/css/*.css, **/*.html, !node_modules/**/*.html\"",
     "watch:sprite": "onchange \"static/img/sprites/\" -- npm run build:sprite",
     "watch:css": "onchange \"sass/\" -- npm run sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
     "watch:all": "npm-run-all -p serve watch:css watch:js watch:sprite",
-
     "build:sprite": "./node_modules/sprity-cli/index.js create 'static/img/common/' 'static/img/sprites/*.png' -s '../../css/sprite.css' -c 'static/'",
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
@@ -36,7 +34,6 @@
     "babel-eslint": "^4.1.3",
     "babel-loader": "^5.3.1",
     "babel-runtime": "^5.6.15",
-    "clean-webpack-plugin": "^0.1.4",
     "es7-autobinder": "^1.2.3",
     "object-assign": "^4.0.1",
     "autoprefixer": "^6.6.1",
@@ -47,6 +44,7 @@
     "postcss-cli": "^2.6.0",
     "node-libs-browser": "^0.5.0",
     "stats-webpack-plugin": "^0.2.2",
+    "clean-webpack-plugin": "^0.1.4",
     "webpack": "<1.12.10",
     "webpack-bundle-tracker": "0.0.8",
     "webpack-dev-server": "^1.14.0",
