@@ -15,14 +15,16 @@
     "autoprefixer": "postcss -u autoprefixer -r static/css/*.css static/css/*/*.css",
     "sass": "node-sass --include-path sass/ --output-style compressed -o static/css sass",
     "serve": "browser-sync start --server --files \"static/css/*.css, **/*.html, !node_modules/**/*.html\"",
-
+    
+    "watch:sprite": "onchange \"static/img/sprites/\" -- npm run build:sprite",
     "watch:css": "onchange \"sass/\" -- npm run sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
-    "watch:all": "npm-run-all -p serve watch:css watch:js",
+    "watch:all": "npm-run-all -p serve watch:css watch:js watch:sprite",
 
+    "build:sprite": "./node_modules/sprity-cli/index.js create 'static/img/common/' 'static/img/sprites/*.png' -s '../../css/sprite.css' -c 'static/'",
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
-    "build:all": "npm run build:css && npm run build:js"
+    "build:all": "npm run build:css && npm run build:sprite && npm run build:js"
   },
   "homepage": "https://github.com/hebertsilva/node-sass-boilerplate#readme",
   "dependencies": {
@@ -37,19 +39,19 @@
     "clean-webpack-plugin": "^0.1.4",
     "es7-autobinder": "^1.2.3",
     "object-assign": "^4.0.1",
-
     "autoprefixer": "^6.6.1",
     "browser-sync": "^2.18.6",
     "node-sass": "^4.1.1",
     "onchange": "^3.1.1",
     "npm-run-all": "^4.0.0",
     "postcss-cli": "^2.6.0",
-
     "node-libs-browser": "^0.5.0",
     "stats-webpack-plugin": "^0.2.2",
     "webpack": "<1.12.10",
     "webpack-bundle-tracker": "0.0.8",
     "webpack-dev-server": "^1.14.0",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "sprity": "^1.0.8",
+    "sprity-cli": "^1.0.1"
   }
 }

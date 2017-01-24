@@ -9,12 +9,13 @@ syntax: glob
 node_modules
 npm-debug.log
 
-# compass
+# sass
 .sass-cache
 *.lock
-Gemfile.lock
 static/css
-.bundle
+
+# sprite
+static/img/common/sprite.png
 
 # webpack
 static/js/build/*/*.js
