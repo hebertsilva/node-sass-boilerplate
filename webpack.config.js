@@ -3,7 +3,7 @@ var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var path = require('path');
 
 var basePath =  __dirname + "/";
-var staticPath = basePath + '/static/';
+var staticPath = basePath + '/src/';
 var nodeModulesDir = path.join(basePath, 'node_modules');
 
 var config = {
@@ -18,7 +18,7 @@ var config = {
 
     output: {
         path: staticPath + 'js/build/development',
-        publicPath: "/static/js/build/development/",
+        publicPath: "/src/js/build/development/",
         filename: '[name].js',
         chunkFilename: '[id].js'
     },

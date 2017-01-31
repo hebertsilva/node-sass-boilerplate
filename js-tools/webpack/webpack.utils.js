@@ -9,11 +9,11 @@ var moment = require("moment");
 
 var path = require('path');
 var basePath =  __dirname + "/../../";
-var staticPath = basePath + "/static/";
+var staticPath = basePath + "/src/";
 var jsPath = staticPath + "js/";
 
 function getDistConfig(env) {
-    var publicPath = options[env] ? options[env].STATIC_URL : "/static/";
+    var publicPath = options[env] ? options[env].SRC_URL : "/src/";
 
     return {
         plugins: webpackConfig.plugins.concat(

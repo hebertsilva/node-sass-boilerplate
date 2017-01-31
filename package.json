@@ -12,14 +12,14 @@
     "url": "https://github.com/hebertsilva/node-sass-boilerplate/issues"
   },
   "scripts": {
-    "autoprefixer": "postcss -u autoprefixer -r static/css/*.css static/css/*/*.css",
-    "sass": "node-sass --include-path sass/ --output-style compressed -o static/css sass",
-    "serve": "browser-sync --port 8000 start --server --files \"static/css/*.css, **/*.html, !node_modules/**/*.html\"",
-    "watch:sprite": "onchange \"static/img/sprites/\" -- npm run build:sprite",
-    "watch:css": "onchange \"sass/\" -- npm run sass",
+    "autoprefixer": "postcss -u autoprefixer -r src/css/*.css src/css/*/*.css",
+    "sass": "node-sass --include-path sass/ --output-style compressed -o src/css sass",
+    "serve": "browser-sync --port 8000 start --server --files \"src/css/*.css, **/*.html, !node_modules/**/*.html\"",
+    "watch:sprite": "onchange \"src/img/sprites/\" -- npm run build:sprite",
+    "watch:css": "node-sass --watch --include-path sass/ --output-style expanded -o src/css sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
     "watch:all": "npm-run-all -p serve watch:css watch:js watch:sprite",
-    "build:sprite": "./node_modules/sprity-cli/index.js create 'static/img/common/' 'static/img/sprites/*.png' -s '../../css/sprite.css' -c 'static/'",
+    "build:sprite": "./node_modules/sprity-cli/index.js create 'src/img/common/' 'src/img/sprites/*.png' -s '../../css/sprite.css' -c 'src/'",
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
     "build:all": "npm run build:css && npm run build:sprite && npm run build:js"

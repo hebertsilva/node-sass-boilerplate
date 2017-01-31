@@ -1,9 +1,9 @@
 module.exports = {
     development: {
-        STATIC_URL: '/static/'
+        SRC_URL: '/src/'
     },
 
     production: {
-        STATIC_URL: '/static/'
+        SRC_URL: '/src/'
     }
 }

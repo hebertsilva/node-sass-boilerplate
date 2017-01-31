@@ -12,11 +12,11 @@ npm-debug.log
 # sass
 .sass-cache
 *.lock
-static/css
+src/css
 
 # sprite
-static/img/common/sprite.png
+src/img/common/sprite.png
 
 # webpack
-static/js/build/*/*.js
-static/js/stats/*.json
+src/js/build/*/*.js
+src/js/stats/*.json
