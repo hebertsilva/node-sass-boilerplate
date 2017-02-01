@@ -59,6 +59,11 @@
     npm run build:all
 ```
 
+**identifying and reporting in ECMAScript/JavaScript code**
+```shell
+    npm run lint
+```
+
 ***Note***
 To monitor files in save as replace in the **watch:css** in **package.json** by that line below using *onchage*
 `"watch:css": "onchange \"sass/\" -- npm run sass",`
