@@ -6,6 +6,20 @@
 
 
 /*
+    ## Layout
+*/
+
+@mixin background-image($path-image, $options) {
+    background: url('#{$path-image-directories}#{$path-image}') #{$options};
+}
+
+@mixin background-icon($path-image, $options, $width-icon, $height-icon) {
+    background: url('#{$path-image-directories}#{$path-image}') #{$options};
+    width: #{$width-icon}px;
+    height: #{$height-icon}px;
+}
+
+/*
     ## Fonts
 */
 

@@ -4,6 +4,14 @@
     `core/_utils.scss`
 */
 
+/*
+    ## Default
+*/
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 /*
     ## Layout
@@ -14,17 +22,16 @@
     vertical-align: middle;
 }
 
-
 /*
     ## Fonts
 */
 
-.bold {
-    font-weight: bold;
+.semi-bold {
+    @include font($font-1, 600);
 }
 
-.semi-bold {
-    font-weight: 600;
+.bold {
+    @include font($font-1, 700);
 }
 
 .text-small {

@@ -20,7 +20,7 @@
     "watch:css": "node-sass --watch --include-path sass/ --output-style expanded -o src/css sass",
     "watch:js": "webpack --watch --config ./webpack.config.dev.js",
     "watch:all": "npm-run-all -p serve watch:css watch:js watch:sprite",
-    "build:sprite": "./node_modules/sprity-cli/index.js create 'src/img/common/' 'src/img/sprites/*.png' -s '../../css/sprite.css' -c 'src/'",
+    "build:sprite": "./node_modules/sprity-cli/index.js create 'src/img/common/' 'src/img/sprites/*.png' -s '../../css/sprite.css' -c '/src/img/common/'",
     "build:css": "npm run sass && npm run autoprefixer",
     "build:js": "webpack --config ./webpack.config.prod.js",
     "build:all": "npm run build:css && npm run build:sprite && npm run build:js"
