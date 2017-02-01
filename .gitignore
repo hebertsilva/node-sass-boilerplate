@@ -11,7 +11,6 @@ npm-debug.log
 
 # sass
 .sass-cache
-*.lock
 src/css
 
 # sprite
