@@ -22,7 +22,6 @@ function getDistConfig(env) {
             new BundleTracker({
                 path: staticPath + "js/stats", filename: (env+'.json')
             }),
-            new webpack.optimize.DedupePlugin(),
             new webpack.optimize.UglifyJsPlugin({
                 compress: {warnings: false},
                 output: {comments: false}

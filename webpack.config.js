@@ -1,36 +1,36 @@
-var webpack = require('webpack');
-var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-var path = require('path');
+var webpack = require("webpack");
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+var path = require("path");
 
 var basePath =  __dirname + "/";
-var staticPath = basePath + '/src/';
-var nodeModulesDir = path.join(basePath, 'node_modules');
+var staticPath = basePath + "src/";
+var nodeModulesDir = path.join(basePath, "node_modules");
 
 var config = {
-    context: staticPath,
+    context: path.resolve(__dirname, './src/js/'),
     
     profile: true,
 
     entry: {
-        common: 'app/common',
-        home: 'app/home'
+        common: "./app/common",
+        home: "./app/home"
     },
 
     output: {
-        path: staticPath + 'js/build/development',
+        path: staticPath + "js/build/development",
         publicPath: "/src/js/build/development/",
-        filename: '[name].js',
-        chunkFilename: '[id].js'
+        filename: "[name].js",
+        chunkFilename: "[id].js"
     },
 
     plugins: [
         new CommonsChunkPlugin({
-            name: 'commons',
-            filename: 'commons.js',
+            name: "commons",
+            filename: "commons.js",
             minChunks: 2,
             chunks: [
-                'common',
-                'home'
+                "common",
+                "home"
             ]
         }),
         new webpack.ProvidePlugin({
@@ -42,19 +42,16 @@ var config = {
     ],
 
     resolve: {
-        extensions: ["", ".js"],
-        modulesDirectories: [
-            "node_modules",
-            staticPath + "js",
+        extensions: [".js"],
+        modules: [
+            "./node_modules",
             staticPath + "js/libs",
             staticPath + "js/app"
-        ],
-
-        alias: {}
-    },
+        ]
+    },    
 
     resolveLoader: {
-        modulesDirectories: [
+        modules: [
             nodeModulesDir
         ]
     },
@@ -63,16 +60,10 @@ var config = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: "babel",
-                exclude: /(node_modules)/,
-                query: {
-                    optional: ["runtime", "es7.decorators", "es7.classProperties"],
-                    cacheDirectory: true
-                }
+                loader: "babel-loader",
+                exclude: /(node_modules)/
             }
-        ],
-
-        noParse: [],
+        ]
     }
 };
 

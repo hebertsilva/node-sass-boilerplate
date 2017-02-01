@@ -19,4 +19,5 @@ src/img/common/sprite.png
 
 # webpack
 src/js/build/*/*.js
+src/js/build/*/*.js.map
 src/js/stats/*.json
