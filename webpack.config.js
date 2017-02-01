@@ -7,13 +7,13 @@ var staticPath = basePath + "src/";
 var nodeModulesDir = path.join(basePath, "node_modules");
 
 var config = {
-    context: path.resolve(__dirname, './src/js/'),
+    context: staticPath,
     
     profile: true,
 
     entry: {
-        common: "./app/common",
-        home: "./app/home"
+        common: "app/common",
+        home: "app/home"
     },
 
     output: {
@@ -45,6 +45,7 @@ var config = {
         extensions: [".js"],
         modules: [
             "./node_modules",
+            staticPath + "js/",
             staticPath + "js/libs",
             staticPath + "js/app"
         ]
