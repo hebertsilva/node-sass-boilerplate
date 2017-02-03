@@ -60,9 +60,7 @@
     "webpack-md5-hash": "0.0.5"
   },
   "keywords": [
-    "mocha",
     "es6",
-    "karma",
     "webpack",
     "babel"
   ]

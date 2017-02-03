@@ -106,17 +106,17 @@
 */
 
 @mixin generate_padding_margins() {
-    @each $rule in padding, margin{
-      $rule-prefix: str-slice($rule, 0, 1);
-      @each $direction in "", -top, -right, -bottom, -left{
-        $direction-prefix: str-slice($direction, 0, 2);
-        @each $size-name, $size in $padding-margin-sizes{
-          $class-name: $rule-prefix + $direction-prefix + $size-name;
-          $rule-name: $rule + $direction;
-          .#{$class-name}{
-              #{$rule-name}: $size;
-          }
+    @each $rule in padding, margin {
+        $rule-prefix: str-slice($rule, 0, 1);
+        @each $direction in "", -top, -right, -bottom, -left {
+            $direction-prefix: str-slice($direction, 0, 2);
+            @each $size-name, $size in $padding-margin-sizes{
+                $class-name: $rule-prefix + $direction-prefix + $size-name;
+                $rule-name: $rule + $direction;
+                .#{$class-name} {
+                    #{$rule-name}: $size;
+                }
+            }
         }
-      }
     }
 }
