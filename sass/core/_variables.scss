@@ -19,17 +19,25 @@ $container-medium: 760px;
 $container-small: 640px;
 
 /*
-    ## Structure
-*/
-
-$font-size-default: 12px;
-$font-size-large: 18px;
-$font-size-medium: 16px;
-$font-size-small: 14px;
-
-/*
     ## Fonts
 */
 
 $font-default: "name_font";
 $font-1: $font-default;
+
+$font-size-large: 18px;
+$font-size-medium: 16px;
+$font-size-small: 14px;
+$font-size-default: 12px;
+
+/*
+    ## Structure
+*/
+
+$padding-margin-sizes: (
+    -es: 10px,
+    -s: 20px,
+    -m: 30px,
+    -l: 40px,
+    -el: 50px
+);

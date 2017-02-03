@@ -13,6 +13,8 @@
     vertical-align: middle;
 }
 
+@include generate_padding_margins();
+
 /*
     ## Layout
 */
