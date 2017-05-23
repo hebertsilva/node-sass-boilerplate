@@ -1,4 +1,11 @@
 {
-    "presets": ["airbnb", "es2015"],
-    "plugins": ["transform-decorators-legacy"]
+  "presets": [
+    "es2015",
+    "airbnb"
+  ],
+  
+  "plugins": [
+    "syntax-decorators",
+    "transform-decorators-legacy"
+  ]
 }
